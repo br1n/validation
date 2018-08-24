@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Submitted Info</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Submitted Info</h1>
+        <p>Name: {{ session['name'] }}</p>
+        <p>Location: {{ session['location'] }}</p>
+        <p>Fave Language: {{ session['language'] }}</p>
+        <p>Comments: {{ session['comment'] }}</p>
+        <!-- <button>Go Back</button> i removed this button because it was not funtional -->
+        <a href="/">Go Back</a> <!--this is the button or tag that will send you back to /index -->
+    </div>    
+</body>
+</html>

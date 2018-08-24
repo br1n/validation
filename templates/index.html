@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="container">
+
+    <h1>Dojo Survey</h1>
+    {% with messages = get_flashed_messages() %}
+       {% if messages %}
+         <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+         </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <form action="/process" method="POST">
+        Name: <input type="text" name="name" style="display:block">
+        
+        Location: <select name="location" style="display:block"> <!--This is a drop down select bar-->
+            <option value="dallas">Dallas</option> <!--You must add options/values to the select bar-->
+            <option value="DC">DC</option> <!--In "" is the server ID and the following, more pretty version is what shows up on browser-->
+            <option value="chicago">Chicago</option>
+            <option value="los_angeles">Los Angeles</option>
+            <option value="seattle">Seattle</option>
+            <option value="tulsa">Tulsa</option>
+        </select>
+        
+        Favorite Language: <select name="language" style="display:block"> <!--This is a select bar-->
+            <option value="js">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="mean">Mean</option>
+            <option value="cs">C#</option>
+        </select>
+        
+        Comment: <textarea name="comment" id="" cols="30" rows="10" style="display:block"></textarea> <!--comment box-->
+        
+        <input type="submit" value="Submit"> <!--submit button-->
+    
+    </form>
+    </div>
+</body>
+</html>
